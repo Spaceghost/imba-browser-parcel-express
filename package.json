@@ -4,12 +4,13 @@
   "description": "Simple Node Sandbox",
   "main": "src/index.js",
   "scripts": {
-    "start": "npm-run-all --parallel imba devserv",
+    "start": "npm-run-all --parallel imba node-imba devserv",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "imbac --output source/scripts --target web imba && parcel build source/index.html --out-dir release",
-    "devserv": "imbac --output src/index.js --target node src/index.imba && parcel source/index.html --out-dir .cache",
+    "devserv": "imbac --output src/ --target node src/index.imba && parcel source/index.html --out-dir .cache",
     "imba": "imbac --watch --output source/scripts --target web imba",
-    "dev": "npm-run-all --parallel imba devserv"
+    "node-imba": "imbac --watch --output src/ --traget node src",
+    "dev": "npm-run-all --parallel imba node-imba devserv"
   },
   "repository": {
     "type": "git",
