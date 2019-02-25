@@ -7,16 +7,22 @@
     "start": "npm-run-all --parallel imba node-imba devserv",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "imbac --output source/scripts --target web imba && parcel build source/index.html --out-dir release",
-    "devserv": "imbac --output src/ --target node src/index.imba && parcel source/index.html --out-dir .cache",
-    "imba": "imbac --watch --output source/scripts --target web imba",
-    "node-imba": "imbac --watch --output src/ --traget node src",
+    "devserv": "parcel source/index.html --port 8080 --out-dir .cache",
+    "imba": "imbac --watch --output source/scripts --target web imba/",
+    "node-imba": "imbac --watch --output src/ --target node src",
     "dev": "npm-run-all --parallel imba node-imba devserv"
   },
   "repository": {
     "type": "git",
     "url": "git@github.com:Spaceghost/imba-browser-parcel-express.git"
   },
-  "dependencies": {},
+  "dependencies": {
+    "babel-core": "6.26.3",
+    "babel-loader": "8.0.5",
+    "babel-preset-env": "1.7.0",
+    "webpack": "4.29.5",
+    "webpack-node-externals": "1.7.2"
+  },
   "devDependencies": {
     "imba": "^1.4.1",
     "npm-run-all": "^4.1.5",

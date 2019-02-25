@@ -11,7 +11,7 @@ var Simple = Imba.defineTag('Simple', function(tag){
 	tag.prototype._y = Math.floor(Math.random() * 300);
 	
 	tag.prototype.render = function (){
-		return this.$open(0).css('top',("" + (this._y) + "px")).css('left',("" + (this._x) + "px")).setText("Hello Isn't this fun?").synced();
+		return this.$open(0).css('top',("" + (this._y) + "px")).css('left',("" + (this._x) + "px")).setText("Can you imagine?").synced();
 	};
 });
 
